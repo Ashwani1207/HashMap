@@ -9,11 +9,25 @@ int main() {
     ourmap.insert(p);
   
     //FIND or Access
-    cout<<ourmap["abc"]<<endl;
-    cout<<ourmap.at("def")<<endl;
-   // cout<<ourmap.at("ghi")<<endl;
-   cout<<ourmap["ghi"]<<endl;
-    
+    cout<<"abc value is : " <<ourmap["abc"]<<endl;
+    cout<<"def value is : " <<ourmap.at("def")<<endl;
+   // cout<<ourmap.at("ghi")<<endl;//This will give error if not found
+   cout<<ourmap["ghi"]<<endl;//this will insert 0 if not found
+   //SIZE
+    cout<<"size before deletion : "<<ourmap.size()<<endl;    
+    //Removing 
+    ourmap.erase("ghi");
+    cout<<"size after deletion : "<<ourmap.size()<<endl;
 	
 	return 0;
 }
+
+
+
+OUTPUT : 
+abc value is : 1
+def value is : 2
+0
+size before deletion : 3
+size after deletion : 2
+
