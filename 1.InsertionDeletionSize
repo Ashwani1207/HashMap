@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    unordered_map<string,int> ourmap;
+    //INSERTION
+    ourmap["abc"]=1;
+    pair<string,int> p("def",2);
+    ourmap.insert(p);
+  
+    //FIND or Access
+    cout<<ourmap["abc"]<<endl;
+    cout<<ourmap.at("def")<<endl;
+   // cout<<ourmap.at("ghi")<<endl;
+   cout<<ourmap["ghi"]<<endl;
+    
+	
+	return 0;
+}
