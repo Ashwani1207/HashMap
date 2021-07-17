@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+#define f first
+#define s second
+using namespace std;
+
+int main() {
+string s;
+getline(cin,s);
+unordered_map<char,int> mp;
+int i=0;
+while(s[i]!='\0'){
+    if(mp.count(s[i])>0)
+    mp[s[i]]++;
+    else
+    mp[s[i]]=1;
+    
+    i++;
+}
+unordered_map<char,int> :: iterator it=mp.begin();
+
+    char ch=s[0];
+	int mx=INT_MIN;
+	while(it!=mp.end()){
+	    if(it->s>mx){
+	       mx=it->s;
+	       ch=it->f; 
+	    }
+	    
+	    it++;
+	}
+	cout<<ch<<endl;
+	
+	
+	
+	return 0;
+}
+
+input:   abrakadabra
+OUTPUT : a
