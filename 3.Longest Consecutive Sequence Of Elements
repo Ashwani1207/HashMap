@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+#define f first
+#define s second
+using namespace std;
+
+int main() {
+int n1;
+cin>>n1;
+int a1[n1];
+for(int i=0;i<n1;i++)
+cin>>a1[i];
+unordered_map<int,bool> freq;
+for(int i=0;i<n1;i++){
+    freq[a1[i]]=true;
+}
+for(int i=0;i<n1;i++){
+    if(freq.count(a1[i]-1)>0)
+    freq[a1[i]]=false;
+}
+int maxlsl=0;
+int maxlss=0;
+
+for(int i=0;i<n1;i++){
+    if(freq[a1[i]]==true){
+        int lsl=1;
+        int lss=a1[i];
+        while(freq.count(lsl+lss)){
+            lsl++;
+            
+        }
+        if(lsl>maxlsl){
+            maxlsl=lsl;
+            maxlss=lss;
+        }
+    }
+}
+for(int i=0;i<maxlsl;i++)
+cout<<maxlss+i<<endl;
+
+
+
+
+
+	
+	
+	return 0;
+}
